@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* vh (height) em css é o tamanho do navegador, 
+porém pode se considerar que é o tamanho da tela do usuário
+
+vw é o mesmo que vh só que pra width*/
+
+body {
+  background-image: url('./images/pokeBg.webp');
+}
+
+/* ÍCONE POKEBALL */
+
+/* section */
+#iconSection {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s;
+  left: 5%;
+  top: 8%;
+  height: 100px;
+  width: 10px;
+}
+
+/* image */
+#iconDiv {
+  background-image: url('./images/iconBall.png');
+  position: absolute;
+  height: 320px;
+  width: 320px;
+  transform: scale(.3);
+  left: -111px;
+  top: -104px;
+  transition: .8s;
+  /* transform-style: preserve-3d; */
+  /* z-index: 1; */
+}
+
+#iconDiv:hover {
+  transform: rotate(-15deg) scale(.4);
+}
+
+/* span (icon message) */
+#iconSection #hoverSpan {
+  visibility: hidden;
+  background-color: rgb(137, 137, 137);
+  border: 1px solid rgb(32, 32, 32);
+  width: 180px;
+  height: 20px;
+  font-size: .9em;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  padding: 1px 0;
+  opacity: 90%;
+}
+
+#iconSection:hover #hoverSpan {
+  visibility: visible;
+  top: 0;
+  margin-left: 6vw;
+}
+
+/* MAIN */
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* POKEDEX */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* POKEDEX SECTION */
+.pokeSection {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 1250px;
+  margin-top: 50px;
+}
+
+/* POKEMONS */
+.pokeContainer {
+  background-color: rgb(250, 248, 248);
+  width: 170px;
+  height: 306px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  border: 3px solid rgb(76, 11, 253);
+  box-shadow: 4px 4px 4px rgb(84, 83, 83);
+  background-image: linear-gradient(white 5%, rgb(194, 183, 246));
+  transition: 0.3s;
+}
+
+/* POKEMON NAME */
+.h4 {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  margin-top: 37px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* ID DIV */
+.idPlace {
+  background-color: rgb(76, 11, 253);
+  width: 180px;
+  color: white;
+  font-weight: 700;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.pokeContainer:hover {
+  border: 3px solid rgb(253, 201, 11);
+  transform: scale(1.1);
+}
+
+.pokeContainer:hover > .idPlace {
+  background-color: rgb(253, 201, 11);
+  color: black;
+  transition: 0.3s;
+}
+
+/* img */
+.pokeImage {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+/* p (pokemon weight) */
+.weight {
+  font-weight: 600;
+  text-shadow: 1px 1px 1px rgb(123, 123, 123);
+}
+
+
+/* title 1 https://archives.bulbagarden.net/media/upload/thumb/4/4b/Pok%C3%A9dex_logo.png/250px-Pok%C3%A9dex_logo.png */
+
+/* TÍTULO */
+.title {
+  background-image: url('./images/logoPokedex.png');
+  height: 180px;
+  width: 600px;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  /* transform: rotateZ(-3deg); */
+  /* background-size: contain; */
+  transform: scale(.7);
+  margin: 50px;
+  margin-top: 50px;
+  margin-bottom: -20px;
+  transition: .6s;
+}
+
+.title:hover {
+  transform: scale(.9) rotateX(360deg) rotateZ(-7deg);
+}
+
+/* pokeball image: https://ae01.alicdn.com/kf/H7b0d3b8943c7497e97241328e770e9cah/Tapete-de-pokemon-go-pokeball-divertido-de-alta-qualidade-redondo-fofo-rea-para-sala-de-estar.jpg_Q90.jpg_.webp */
+
+/* MINI POKEBALL */
+
+/* POKEBALL UNSELECTED */
+.ballUnselected {
+  background-image: url('./images/pokeBallUnselected.png');
+  height: 15px;
+  width: 15px;
+  background-size: contain;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  margin-left: 0;
+  /* DANIEL LANÇOU A BRABA */
+  /* mix-blend-mode: multiply; */
+}
+
+/* POKEBALL SELECTED */
+.ballSelected {
+  background-image: url('./images/pokeBallCorrected.png');
+  height: 15px;
+  width: 15px;
+  background-size: contain;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  margin-left: 0;
+}
+
+/* FORM DIV */
+.formContainer {
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 100px;
+  top: 100px;
+}
+
+/* FORM */
+#pokeform {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* SELECT */
+
+/* section */
+#selectSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* label */
+#selectLabel {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3%;
+  margin-top: 30px;
+}
+
+/* select */
+#pokeSelect {
+  margin-top: 10px;
+  width: 100px;
+  border-radius: 20px;
+  height: 20px;
+  text-align: center;
+  border: 2px solid rgb(68, 68, 68);
+}
+
+#pokeSelect:hover {
+  cursor: pointer;
+}
+
+/* SEARCH POKEMON */
+
+/* section */
+#searchSection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* input */
+#searchInput {
+  height: 18px;
+  width: 150px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+#searchInput:hover {
+  cursor: pointer;
+}
+
+/* SORTEAR POKEMONS */
+
+/* section */
+#sortContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+/* label */
+#sortLabel {
+  margin-bottom: 15px;
+}
+
+/* button */
+.sortBtn {
+  margin: 3px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 3px 3px 3px rgb(88, 88, 88);
+}
+
+.sortBtn:hover {
+  cursor: pointer;
+}
+
+/* TYPE COLORS ---- start */
+.grass {
+  background-color: #78C850;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+}
+
+.fire {
+  background-color: #F08030;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.water {
+  background-color: #6890F0;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.bug {
+  background-color: #A8B820;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.normal {
+  background-color: #A8A878;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.poison {
+  background-color: #A040A0;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.electric {
+  background-color: #F8D030;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.ground {
+  background-color: #E0C068;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.fairy {
+  background-color: #EE99AC;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.fighting {
+  background-color: #C03028;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.psychic {
+  background-color: #F85888;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.rock {
+  background-color: #B8A038;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+}
+
+
+.ghost {
+  background-color: #705898;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+.ice {
+  background-color: #98D8D8;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+}
+
+
+.dragon {
+  background-color: #7038F8;
+  padding: 1px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+/* TYPE COLORS ---- end */
+
+/* pesquisar: */
+/* 
+radial-gradients
+overflow
+z-index
+@keyframes
+ */
